@@ -1,5 +1,12 @@
 #!/usr/bin/env pybricks-micropython
 
+# "from...import" is Python way of bringing in someone else's program
+# so that you can use it. In this case we are bringing in what LEGO provided
+# for Python (called pybricks).
+# for example: this line means we will bring in the ev3brick and call it "brick"
+# - the programs from which you import are called "libraries"
+# - the things you bring in (for example ev3brick) are called "classes"
+# - you use those classes by "calling" a "function" on them (we will see examples later)
 from pybricks import ev3brick as brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
                                  InfraredSensor, UltrasonicSensor, GyroSensor)
@@ -8,8 +15,7 @@ from pybricks.parameters import (Port, Stop, Direction, Button, Color,
 from pybricks.tools import print, wait, StopWatch
 from pybricks.robotics import DriveBase
 
-# Write your program here
-# Initialize two motors and a drive base
+# 
 color = ColorSensor(Port.S2)
 left = Motor(Port.B)
 right = Motor(Port.C)
