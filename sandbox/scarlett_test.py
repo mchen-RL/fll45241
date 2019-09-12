@@ -17,6 +17,13 @@ from pybricks.tools import print, wait
 # - the name of the function is brick.sound.file
 # - we need to make the function know what sound to make, this is done by give a "parameter"
 # - the parameter "SoundFile.HELLO" tells the function to say "HELLO"
+
+
+left = Motor(Port.B)
+right = Motor(Port.C)
+robot = DriveBase(left, right, 56, 114)
+
+robot.drive_time(250, 0, 2000)
 brick.sound.file(SoundFile.SNORING)
 
 # Call "print" to show something. This prints in your VS Code, not on EV3 
@@ -25,6 +32,9 @@ print("The brick is sleeping but watch out.......")
 
 # simply wait for 2 seconds (or 2000 milliseconds), don't do anything
 wait(2000)
+
+robot.drive_time(250, 100, 4000)
+robot.drive_time(250, 0, 6000)
 
 # make some different noise
 brick.sound.file(SoundFile.KUNG_FU)
