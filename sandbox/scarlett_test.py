@@ -17,15 +17,19 @@ from pybricks.tools import print, wait
 # - the name of the function is brick.sound.file
 # - we need to make the function know what sound to make, this is done by give a "parameter"
 # - the parameter "SoundFile.HELLO" tells the function to say "HELLO"
-brick.sound.file(SoundFile.HELLO)
+brick.sound.file(SoundFile.SNORING)
 
 # Call "print" to show something. This prints in your VS Code, not on EV3 
 # It is very useful for "debug" so you can see what's going on in your program.
-print("The brick says hello so hi")
+print("The brick is sleeping but watch out.......")
 
 # simply wait for 2 seconds (or 2000 milliseconds), don't do anything
 wait(2000)
 
 # make some different noise
 brick.sound.file(SoundFile.KUNG_FU)
-print("hai-ya")
+
+
+brick.sound.file(SoundFile.SMACK)
+brick.sound.file(SoundFile.OUCH)
+print("I warned you")
