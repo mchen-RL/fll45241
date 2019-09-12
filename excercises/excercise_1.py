@@ -10,6 +10,7 @@
 # - the things you bring in (for example ev3brick) are called "classes"
 # - you use those classes by "calling" a "function" on them (we will see examples later)
 from pybricks import ev3brick as brick
+from pybricks.parameters import (Port, SoundFile)
 from pybricks.tools import print, wait
 
 # "call" a function on "brick" (which is what decided to call ev3brick) to make some noise.

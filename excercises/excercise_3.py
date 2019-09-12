@@ -2,7 +2,7 @@
 
 # import more Classes for us to use
 from pybricks import ev3brick as brick
-from pybricks.ev3devices import Motor
+from pybricks.ev3devices import Motor, GyroSensor
 from pybricks.parameters import (Port, SoundFile)
 from pybricks.tools import print, wait, StopWatch
 from pybricks.robotics import DriveBase
@@ -25,7 +25,7 @@ robot = DriveBase(left, right, 56, 114)
 def drive_straight(rotations):
     # let's use left motor the tell us how many rotations we have done
     # to do this, first we need to set its degree memory to zero
-    left.reset_angle()
+    left.reset_angle(0)
     # start moving straight forward
     robot.drive(250, 0)
     # keep checking until we turned enough
@@ -47,7 +47,7 @@ def turn_right_90():
     right.stop()
     left.run(100)
     # we want to keep turning until the gyro gets an angle that's larger than 90
-    while(gyro.angle() >= 90):
+    while(gyro.angle() <= 90):
         pass
     # turn off motors
     robot.stop()
@@ -55,9 +55,9 @@ def turn_right_90():
 # make some noise
 brick.sound.file(SoundFile.HELLO)
 
-# drive forward 3 rotations and then make a right 90 degree turn
+# drive forward 2 rotations and then make a right 90 degree turn
 # then forward another 2 rotation and turn again
-drive_straight(3)
+drive_straight(2)
 turn_right_90()
 
 drive_straight(2)
