@@ -1,6 +1,7 @@
 #!/usr/bin/env pybricks-micropython
 
 # import more Classes for us to use
+import math
 from pybricks import ev3brick as brick
 from pybricks.ev3devices import Motor, GyroSensor
 from pybricks.parameters import (Port, Stop, SoundFile)
@@ -17,7 +18,8 @@ from pybricks.robotics import DriveBase
 left = Motor(Port.B)
 right = Motor(Port.C)
 gyro = GyroSensor(Port.S4)
-robot = DriveBase(left, right, 56, 114)
+diameter = 56
+robot = DriveBase(left, right, diameter, 114)
 
 # you can create your own function with "def" 
 # this is the way to teach the robot new tricks
@@ -35,34 +37,52 @@ def drive_straight(rotations):
         # we don't really have anything to do when waiting so just "pass"
         pass
     # we are done with rotations, stop the robot
-    robot.stop()
+    robot.stop(Stop.BRAKE)
+
+# drive straight in inches
+def drive_inch(inches):
+    # calc degrees from distance
+    circumference = diameter * math.pi
+    rotation = inches * 25.4 / circumference
+    drive_straight(rotation)
 
 # def another function that make the robot turn 90 degrees right
 # the best way to do this is to use the Gyro sensor to tell us how much 
 # the robot has turned
-def turn_right_90():
+def turn_right(degrees):
+    adjustment = 5
     # in order to turn right, we stop the right motor and drive the left one
     right.stop()
     left.run(160)
     # we want to keep turning until the gyro gets an angle that's larger than 90
     start = gyro.angle()
-    while(gyro.angle() < 85 + start):
+    while(gyro.angle() < degrees + start - adjustment):
         pass
     # turn off motors
     robot.stop(Stop.BRAKE)
-    wait(100)
-    print(gyro.angle())
+
+# def another function that make the robot turn 90 degrees right
+# the best way to do this is to use the Gyro sensor to tell us how much 
+# the robot has turned
+def turn_left(degrees):
+    adjustment = 5
+    # in order to turn right, we stop the right motor and drive the left one
+    left.stop()
+    right.run(160)
+    # we want to keep turning until the gyro gets an angle that's larger than 90
+    start = gyro.angle()
+    while(gyro.angle() > start - degrees + adjustment):
+        pass
+    # turn off motors
+    robot.stop(Stop.BRAKE)
 
 # make some noise
 brick.sound.file(SoundFile.HELLO)
 
 # drive forward 2 rotations and then make a right 90 degree turn
 # then forward another 2 rotation and turn again
-drive_straight(2)
-turn_right_90()
-drive_straight(2)
-turn_right_90()
-drive_straight(2)
+drive_inch(32)
+turn_left(90)
 
 # make some noise
 brick.sound.file(SoundFile.KUNG_FU)
