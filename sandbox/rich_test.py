@@ -7,7 +7,7 @@
 # for Python (called pybricks).
 # for example: this line means we will bring in the ev3brick and call it "brick"
 # - the programs from which you import are called "libraries"
-# - the things you bring in (for example ev3brick) are called "classes"
+# - the things you bring in (for example ev3brick) are called "classes"``
 # - you use those classes by "calling" a "function" on them (we will see examples later)
 from pybricks import ev3brick as brick
 from pybricks.parameters import (Port, SoundFile)
@@ -28,4 +28,5 @@ wait(2000)
 
 # make some different noise
 brick.sound.file(SoundFile.snoring)
-
+brick.sound.file(SoundFile.ouch)
+brick.sound.file(SoundFile.error_alarm)
