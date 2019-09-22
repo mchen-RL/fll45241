@@ -3,7 +3,7 @@
 # import more Classes for us to use
 from pybricks import ev3brick as brick
 from pybricks.ev3devices import Motor,GyroSensor,ColorSensor
-from pybricks.parameters import (Port, SoundFile)
+from pybricks.parameters import Port, SoundFile, Stop
 from pybricks.tools import print, wait, StopWatch
 from pybricks.robotics import DriveBase
 import math
@@ -21,7 +21,7 @@ wheel_diameter=56
 robot = DriveBase(left, right, wheel_diameter, 114)
 color1 = ColorSensor(Port.S1)
 color2 = ColorSensor(Port.S2)
-gyro = GyroSensor(Port.S3)
+gyro = GyroSensor(Port.S4)
 
 # pi * diameter(radius * 2)
 def InchToDegrees(inch):
@@ -31,18 +31,17 @@ def InchToDegrees(inch):
     return degrees
 
 def GoStraight(inch, speed):
+    degree = InchToDegrees(inch)
+    right.reset_angle(0)
     robot.drive(speed, 0)
-    degrees = InchtoDegrees(inch)
-    robot.reset_angle(0)
     while(right.angle() < degree):
         pass
     robot.stop(Stop.BRAKE)
 
 def FollowLine(inch, speed):
-    def GoStraight(inch, speed):
+    degree = InchToDegrees(inch)
+    right.reset_angle(0)
     robot.drive(speed, 0)
-    degrees = InchtoDegrees(inch)
-    robot.reset_angle(0)
     while(right.angle() < degree):
         ColorReflect = colorf1.reflection()
         error = ColorReflect - 40
@@ -50,21 +49,21 @@ def FollowLine(inch, speed):
     robot.stop(Stop.BRAKE)
 
 
-def TurnLeft(degrees, speed):
-    CurrentDegrees = gyro.degree()
+def TurnLeft(degree, speed):
+    CurrentDegrees = gyro.angle()
     left.stop(Stop.BRAKE)
     right.run(speed)
     stopDegree = CurrentDegrees - degree
-    while (gyro.degree() > stopDegree):
+    while (gyro.angle() > stopDegree):
         pass
     robot.stop(Stop.BRAKE)
 
-def TurnRight(degrees, speed):
-    CurrentDegrees = gyro.degree()
+def TurnRight(degree, speed):
+    CurrentDegrees = gyro.angle()
     right.stop(Stop.BRAKE)
     left.run(speed)
     stopDegree = CurrentDegrees + degree
-    while (gyro.degree() < stopDegree):
+    while (gyro.angle() < stopDegree):
         pass
     robot.stop(Stop.BRAKE)
 
