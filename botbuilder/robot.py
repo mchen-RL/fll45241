@@ -47,7 +47,7 @@ def FollowLine(inch, speed):
     robot.drive(speed, 0)
     #go
     while(right.angle() < degree):
-        ColorReflect = colorf1.reflection()
+        ColorReflect = color2.reflection()
         #Color reflect = reflection from color sensor
         error = ColorReflect - 40
         #40 is in the middle of black and white, where you want to go
@@ -86,7 +86,7 @@ def TurnLeft(degree, speed):
         pass
     robot.stop(Stop.BRAKE)
 
-def TurnTo(direction,speed)
+def TurnTo(direction,speed):
     CurrentGyro = gyro.angle()
     if CurrentGyro - direction < 0:
         TurnRight(direction - CurrentGyro, speed)
