@@ -6,11 +6,23 @@ from botbuilder import robot
 
 def M07Swing():
     robot.GoStraight(14, 150)
+    robot.Debug(1)
     robot.FollowLine(21, 150)
+    robot.Debug(2)
     robot.GoStraight(5,150)
+    robot.Debug(3)
     robot.TurnTo(-50, 150)
-    robot.GoStraight(10, 150)
-    robot.TurnTo(45, 150)
-    robot.GoStraight(11, 150)
+    robot.Debug(4)
+    robot.GoTowards(10, -50, 150)
+    robot.Debug(5)
+    robot.TurnTo(43, 150)
+    robot.Debug(6)
+    robot.GoStraight(13, 150)
+    robot.Debug(7)
     robot.TurnTo(0, 150)
+    robot.Debug(8)
     robot.GoStraight(5, 150)
+    robot.Debug(9)
+
+
+

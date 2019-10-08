@@ -63,12 +63,14 @@ def GoTowards(inch,direction,speed):
      #uses compass to turn to degrees
     degree = InchToDegrees(inch)
     #convert inches to degrees
+    right.reset_angle(0)
+    #reset motor rotation
     robot.drive(speed, 0)
     #go
     while(right.angle() < degree):
         GyroCompass = gyro.angle()
         #GyroCompass = Where the robot is facing
-        error = GyroCompass - direction
+        error = direction - GyroCompass
         #GyroCompass - direction is the error
         #the error is how much you need to turn
         robot.drive(speed,error)
@@ -106,5 +108,7 @@ def TurnRight(degree, speed):
     robot.stop(Stop.BRAKE)
 
 
+def Debug(step):
     
+    print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle())
     
