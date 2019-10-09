@@ -15,13 +15,13 @@ def M07Swing():
     robot.Debug(4)
     robot.GoTowards(10, -50, 150)
     robot.Debug(5)
-    robot.TurnTo(43, 150)
+    robot.TurnTo(55, 150)
     robot.Debug(6)
-    robot.GoStraight(13, 150)
+    robot.GoTowards(10, 55, 150)
     robot.Debug(7)
     robot.TurnTo(0, 150)
     robot.Debug(8)
-    robot.GoStraight(5, 150)
+    robot.GoTowards(5, 0, 150)
     robot.Debug(9)
 
 

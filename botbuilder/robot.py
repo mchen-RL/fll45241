@@ -8,6 +8,7 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.robotics import DriveBase
 import math
 
+
 left = Motor(Port.B)
 right = Motor(Port.C)
 wheel_diameter=56
@@ -15,6 +16,7 @@ robot = DriveBase(left, right, wheel_diameter, 114)
 color1 = ColorSensor(Port.S1)
 color2 = ColorSensor(Port.S2)
 gyro = GyroSensor(Port.S4)
+FluffyBunny = StopWatch()
 
 # pi * diameter(radius * 2)
 
@@ -108,7 +110,5 @@ def TurnRight(degree, speed):
     robot.stop(Stop.BRAKE)
 
 
-def Debug(step):
-    
-    print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle())
-    
+def Debug(step): 
+    print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", FluffyBunny.time()//1000)
