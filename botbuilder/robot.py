@@ -112,3 +112,14 @@ def TurnRight(degree, speed):
 
 def Debug(step): 
     print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", FluffyBunny.time()//1000)
+
+def GoBack(inch, speed):
+    degree = InchToDegrees(inch)
+    #convert inches to degrees
+    right.reset_angle(0)
+    #reset motor rotation
+    robot.drive(-speed, 0)
+    #go straight
+    while(-right.angle() > degree):
+        pass
+    robot.stop(Stop.BRAKE)
