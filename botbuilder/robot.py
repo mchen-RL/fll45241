@@ -120,6 +120,6 @@ def GoBack(inch, speed):
     #reset motor rotation
     robot.drive(-speed, 0)
     #go straight
-    while(-right.angle() > degree):
+    while(-right.angle() < degree):
         pass
     robot.stop(Stop.BRAKE)
