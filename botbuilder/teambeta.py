@@ -23,6 +23,3 @@ def M07Swing():
     robot.Debug(8)
     robot.GoTowards(5, 0, 150)
     robot.Debug(9)
-
-
-

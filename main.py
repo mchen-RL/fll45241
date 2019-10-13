@@ -4,5 +4,13 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
 
+#Swing
 beta.M07Swing()
 
+#Elevator
+
+#Crane
+
+#Bridge
+
+#Traffic
