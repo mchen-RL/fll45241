@@ -16,7 +16,8 @@ robot = DriveBase(left, right, wheel_diameter, 114)
 color1 = ColorSensor(Port.S1)
 color2 = ColorSensor(Port.S2)
 gyro = GyroSensor(Port.S4)
-FluffyBunny = StopWatch()
+time = StopWatch()
+amotor = Motor(Port.A) 
 
 # pi * diameter(radius * 2)
 
@@ -54,7 +55,7 @@ def FollowLine(inch, speed):
         error = ColorReflect - 40
         #40 is in the middle of black and white, where you want to go
         #the error is how much you need to turn
-        robot.drive(speed,error)
+        robot.drive(speed,error * 0.5)
         #turning
     robot.stop(Stop.BRAKE)
     #stop
@@ -111,4 +112,18 @@ def TurnRight(degree, speed):
 
 
 def Debug(step): 
-    print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", FluffyBunny.time()//1000)
+    print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", time.time()//1000)
+
+def GoBack(inch, speed):
+    degree = InchToDegrees(inch)
+    #convert inches to degrees
+    right.reset_angle(0)
+    #reset motor rotation
+    robot.drive(-speed, 0)
+    #go straight
+    while(-right.angle() < degree):
+        pass
+    robot.stop(Stop.BRAKE)
+
+def MoveMotor(degrees,speed):
+    amotor.run_angle(speed, degrees, Stop.BRAKE)

@@ -25,7 +25,7 @@ def M07Swing():
     robot.Debug(9)
 
 
-def elevator():
+def Elevator():
     robot.TurnTo(0,150)   
     robot.FollowLine(32,150) 
     robot.TurnTo(-110,150)
