@@ -3,7 +3,7 @@ from pybricks import ev3brick as brick
 from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot
-# Rowan is a bot
+# Rowan is a bot0
 def Crane():
    robot.gyro.reset_angle(-90)
    robot.GoTowards(25,-90,150)
