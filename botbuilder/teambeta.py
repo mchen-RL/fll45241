@@ -4,7 +4,7 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot
 
-def M07Swing():
+def Swing():
     robot.GoStraight(14, 150)
     robot.Debug(1)
     robot.FollowLine(21, 150)
@@ -28,9 +28,9 @@ def M07Swing():
 def SwingElevator():
 
     #Elevator
-    robot.TurnTo(0,150)   
+    robot.TurnTo(0,150)
     robot.FollowLine(24,150)
-    robot.GoTowards(5,0,150) 
+    robot.GoTowards(5,0,150)
     robot.TurnTo(-110,150)
     robot.GoTowards(9,-110,150)
     robot.TurnTo(-20, 150)
@@ -45,11 +45,11 @@ def SwingElevator():
     robot.GoBack(50,450)
 
 
-    
+
 def Elevator():
-    robot.TurnTo(0,150)   
+    robot.TurnTo(0,150)
     robot.FollowLine(24,150)
-    robot.GoTowards(5,0,150) 
+    robot.GoTowards(5,0,150)
     robot.TurnTo(-110,150)
     robot.GoTowards(9,-110,150)
     robot.TurnTo(-20, 150)
