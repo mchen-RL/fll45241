@@ -33,4 +33,4 @@ def Elevator():
     robot.GoTowards(9,-110,150)
     robot.TurnTo(-20, 150)
     robot.GoTowards(4.5,-20,75)
-    robot.GoBack(50, 1000)
+    robot.GoBack(45, 500)
