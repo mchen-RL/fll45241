@@ -28,7 +28,6 @@ def Swing():
 def SwingElevator():
 
     #Elevator
-    robot.TurnTo(0,150)
     robot.FollowLine(24,150)
     robot.GoTowards(5,0,150)
     robot.TurnTo(-110,150)
