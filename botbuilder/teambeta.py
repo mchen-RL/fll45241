@@ -57,5 +57,6 @@ def Elevator():
     robot.TurnTo(-20, 150)
     #Go forward and back
     robot.GoTowards(7,-20,75)
-    robot.GoBack(7,75)
+    robot.GoBack(7,25)
     robot.GoBack(40, 500)
+
