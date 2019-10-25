@@ -8,7 +8,7 @@ def Swing():
     robot.GoStraight(14, 150)
     robot.FollowLine(21, 150)
     robot.GoStraight(5,150)
-    robot.FollowLine(20,150)
+    robot.FollowLine(10,75)
 
 def SwingElevator():
 
