@@ -6,24 +6,9 @@ from botbuilder import robot
 
 def Swing():
     robot.GoStraight(14, 150)
-    robot.Debug(1)
     robot.FollowLine(21, 150)
-    robot.Debug(2)
     robot.GoStraight(5,150)
-    robot.Debug(3)
-    robot.TurnTo(-50, 150)
-    robot.Debug(4)
-    robot.GoTowards(10, -50, 150)
-    robot.Debug(5)
-    robot.TurnTo(55, 150)
-    robot.Debug(6)
-    robot.GoTowards(10, 55, 150)
-    robot.Debug(7)
-    robot.TurnTo(0, 150)
-    robot.Debug(8)
-    robot.GoTowards(5, 0, 150)
-    robot.Debug(9)
-    robot.GoBack(50,450)
+    robot.FollowLine(20,150)
 
 def SwingElevator():
 
@@ -57,6 +42,6 @@ def Elevator():
     robot.TurnTo(-20, 150)
     #Go forward and back
     robot.GoTowards(7,-20,75)
-    robot.GoBack(7,25)
-    robot.GoBack(40, 500)
+    robot.GoBack(6.5,50)
+    robot.GoBack(20, 500)
 
