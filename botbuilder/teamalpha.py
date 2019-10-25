@@ -11,6 +11,7 @@ def Crane():
    robot.TurnTo(0,150)
    robot.GoTowards(4,0,150)
    robot.TurnTo(-90,150)
+   robot.GoStraight(5,50)
    robot.GoTowards(3,-90,150)
    robot.GoTowards(3,-90,50)
    robot.GoBack(0.5,50)

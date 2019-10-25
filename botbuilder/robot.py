@@ -17,7 +17,7 @@ color1 = ColorSensor(Port.S1)
 color2 = ColorSensor(Port.S2)
 gyro = GyroSensor(Port.S4)
 time = StopWatch()
-amotor = Motor(Port.A) 
+amotor = Motor(Port.A)
 
 # pi * diameter(radius * 2)
 
@@ -111,7 +111,7 @@ def TurnRight(degree, speed):
     robot.stop(Stop.BRAKE)
 
 
-def Debug(step): 
+def Debug(step):
     print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", time.time()//1000)
 
 def GoBack(inch, speed):
@@ -125,5 +125,7 @@ def GoBack(inch, speed):
         pass
     robot.stop(Stop.BRAKE)
 
-def MoveMotor(degrees,speed):
+def MoveMotor(degrees,speed,back):
     amotor.run_angle(speed, degrees, Stop.BRAKE)
+    if back:
+        amotor.run_angle(-speed, degrees, Stop.BRAKE)

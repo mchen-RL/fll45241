@@ -31,11 +31,17 @@ def SwingElevator():
 
 
 def Elevator():
+    #Follow line
     robot.TurnTo(0,150)
     robot.FollowLine(24,150)
     robot.GoTowards(5,0,150)
+    #Turn to bridge
     robot.TurnTo(-110,150)
     robot.GoTowards(9,-110,150)
+    #Go to the elevator
     robot.TurnTo(-20, 150)
-    robot.GoTowards(4.5,-20,75)
+    #Go forward and back
+    robot.GoTowards(7,-20,75)
+    robot.GoBack(7,25)
     robot.GoBack(40, 500)
+
