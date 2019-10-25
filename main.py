@@ -26,6 +26,7 @@ while True:
             CurrentMission = len(missions) - 1
 
     elif Button.CENTER in brick.buttons():
+        robot.gyro.reset_angle(0)
         print("It's time to RUN")
         if CurrentMission == 0:
             beta.Swing()
@@ -33,8 +34,6 @@ while True:
             beta.Elevator()
         elif CurrentMission == 2:
             alpha.Crane()
-
-
 
     brick.display.image(missions[CurrentMission])
 
