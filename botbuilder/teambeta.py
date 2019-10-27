@@ -8,24 +8,16 @@ def Swing():
     robot.GoStraight(14, 150)
     robot.FollowLine(21, 150)
     robot.GoStraight(8, 150)
-    robot.FollowLine(20, 150)
+    robot.FollowLine(17, 150)
 
-def SwingElevator():
-    #Elevator
-    robot.FollowLine(24,150)
-    robot.GoTowards(5,0,150)
-    robot.TurnTo(-110,150)
-    robot.GoTowards(9,-110,150)
+    #Start Elevator mission
+    robot.TurnTo(30, 150)
+    robot.GoBackTowards(24, 25, 150)
     robot.TurnTo(-20, 150)
-    robot.GoTowards(4.5,-20,75)
-    robot.GoBack(4.5, 75)
+    robot.GoTowards(7,-25,75)
+    robot.GoBack(6.5,50)
+    robot.GoBack(20, 500)
 
-    #Swing
-    robot.TurnTo(55, 150)
-    robot.GoTowards(10, 55, 150)
-    robot.TurnTo(0, 150)
-    robot.GoTowards(5, 0, 150)
-    robot.GoBack(50,450)
 
 
 

@@ -139,7 +139,7 @@ def GoBackTowards(inch,direction,speed):
         error = direction - GyroCompass
         #GyroCompass - direction is the error
         #the error is how much you need to turn
-        robot.drive(speed,error)
+        robot.drive(-speed, error)
         #turning
     robot.stop(Stop.BRAKE)
     #stop
