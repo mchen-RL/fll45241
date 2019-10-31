@@ -12,7 +12,7 @@ def Swing():
 
     #Start Elevator mission
     robot.TurnTo(30, 150)
-    robot.GoBackTowards(24, 25, 150)
+    robot.GoBackTowards(22, 25, 150)
     robot.TurnTo(-20, 150)
     robot.GoTowards(7,-25,75)
     robot.GoBack(6.5,50)
