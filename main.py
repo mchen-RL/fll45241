@@ -26,6 +26,7 @@ while True:
             CurrentMission = len(missions) - 1
 
     elif Button.CENTER in brick.buttons():
+        wait(100)
         robot.gyro.reset_angle(0)
         print("It's time to RUN")
         if CurrentMission == 0:
