@@ -148,3 +148,29 @@ def MoveMotor(degrees,speed,back):
     amotor.run_angle(speed, degrees, Stop.BRAKE)
     if back:
         amotor.run_angle(-speed, degrees, Stop.BRAKE)
+
+
+def TankTurnTo(direction, speed):
+    CurrentGyro = gyro.angle()
+    if CurrentGyro - direction < 0:
+        TankTurnRight(direction - CurrentGyro, speed)
+    else:
+        TankTurnLeft(CurrentGyro - direction, speed)
+
+def TankTurnLeft(degree, speed):
+    CurrentDegrees = gyro.angle()
+    left.run(-speed)
+    right.run(speed)
+    stopDegree = CurrentDegrees - degree
+    while (gyro.angle() > stopDegree):
+        pass
+    robot.stop(Stop.BRAKE)
+
+def TankTurnRight(degree, speed):
+    CurrentDegrees = gyro.angle()
+    right.run(-speed)
+    left.run(speed)
+    stopDegree = CurrentDegrees + degree
+    while (gyro.angle() < stopDegree):
+        pass
+    robot.stop(Stop.BRAKE)

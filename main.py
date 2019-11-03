@@ -4,7 +4,9 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
 
-missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg"]
+missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg",
+            "Images/StackBlocks.jpg", "Images/ColorMatch.png"]
+
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
@@ -35,6 +37,10 @@ while True:
             beta.Elevator()
         elif CurrentMission == 2:
             alpha.Crane()
+        elif CurrentMission == 3:
+            beta.Blocks()
+        elif CurrentMission == 4:
+            beta.ColorMatch()
 
     brick.display.image(missions[CurrentMission])
 
