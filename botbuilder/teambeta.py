@@ -35,3 +35,19 @@ def Elevator():
     robot.GoBack(6.5,50)
     robot.GoBack(20, 500)
 
+def ColorMatch():
+    robot.GoTowards(14, 0, 150)
+    robot.FollowLine(7, 150)
+    robot.TankTurnTo(-20, 100)
+    robot.GoTowards(2, -20, 100)
+    robot.GoBackTowards(2.5, -20, 100)
+    robot.TankTurnTo(0,100)
+    robot.FollowLine(12,150)
+    robot.GoTowards(10, 0, 150)
+    robot.TurnTo(-90, 100)
+    robot.GoTowards(9.5, -90, 100)
+    robot.GoBack(10, 100)
+
+def Blocks():
+    robot.GoStraight(10, 100)
+    robot.GoBack(10,100)
