@@ -49,5 +49,8 @@ def ColorMatch():
     robot.GoBack(10, 100)
 
 def Blocks():
-    robot.GoStraight(10, 100)
-    robot.GoBack(10,100)
+    robot.GoStraight(18.5, 100)
+    robot.GoBack(17,200)
+    robot.TurnRight(90, 200)
+    robot.GoBack(15, 200)
+    robot.TankTurnLeft(100, 200)
