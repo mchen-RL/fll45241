@@ -6,7 +6,7 @@ from botbuilder import robot
 
 def Crane():
    robot.gyro.reset_angle(-90)
-   robot.GoTowards(25,-90,150)
+   robot.GoTowards(25.5,-90,150)
    robot.GoBack(12,150)
    robot.TurnTo(0,150)
    robot.GoTowards(4,0,150)
@@ -14,6 +14,12 @@ def Crane():
    robot.GoStraight(5,50)
    robot.GoTowards(3,-90,150)
    robot.GoTowards(3,-90,50)
-   robot.GoBack(0.5,50)
    wait(1000)
-   robot.MoveMotor(156,50)
+   robot.MoveMotor(140,195,True)
+   robot.MoveMotor(140,195,True)
+
+
+   # Ramp
+   robot.FollowLine(38, 195 )
+   robot.TurnLeft(90,100)
+   robot.FollowLine(41, 195 )
