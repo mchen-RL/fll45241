@@ -4,7 +4,9 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
 
-missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg"]
+missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg",
+            "Images/StackBlocks.jpg", "Images/ColorMatch.png"]
+
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
@@ -26,15 +28,20 @@ while True:
             CurrentMission = len(missions) - 1
 
     elif Button.CENTER in brick.buttons():
+        wait(100)
+        robot.gyro.reset_angle(0)
         print("It's time to RUN")
         if CurrentMission == 0:
             beta.Swing()
         elif CurrentMission == 1:
             beta.Elevator()
         elif CurrentMission == 2:
-            alpha.Crane()
-
-
+            #alpha.Crane()
+            alpha.Ramp()
+        elif CurrentMission == 3:
+            beta.Blocks()
+        elif CurrentMission == 4:
+            beta.ColorMatch()
 
     brick.display.image(missions[CurrentMission])
 

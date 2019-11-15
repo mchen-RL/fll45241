@@ -6,48 +6,23 @@ from botbuilder import robot
 
 def Swing():
     robot.GoStraight(14, 150)
-    robot.Debug(1)
     robot.FollowLine(21, 150)
-    robot.Debug(2)
-    robot.GoStraight(5,150)
-    robot.Debug(3)
-    robot.TurnTo(-50, 150)
-    robot.Debug(4)
-    robot.GoTowards(10, -50, 150)
-    robot.Debug(5)
-    robot.TurnTo(55, 150)
-    robot.Debug(6)
-    robot.GoTowards(10, 55, 150)
-    robot.Debug(7)
-    robot.TurnTo(0, 150)
-    robot.Debug(8)
-    robot.GoTowards(5, 0, 150)
-    robot.Debug(9)
-    robot.GoBack(50,450)
+    robot.GoStraight(8, 150)
+    robot.FollowLine(17, 150)
 
-def SwingElevator():
-
-    #Elevator
-    robot.FollowLine(24,150)
-    robot.GoTowards(5,0,150)
-    robot.TurnTo(-110,150)
-    robot.GoTowards(9,-110,150)
+    #Start Elevator mission
+    robot.TurnTo(30, 150)
+    robot.GoBackTowards(22, 25, 150)
     robot.TurnTo(-20, 150)
-    robot.GoTowards(4.5,-20,75)
-    robot.GoBack(4.5, 75)
+    robot.GoTowards(7,-25,75)
+    robot.GoBack(6.5,50)
+    robot.GoBack(20, 500)
 
-    #Swing
-    robot.TurnTo(55, 150)
-    robot.GoTowards(10, 55, 150)
-    robot.TurnTo(0, 150)
-    robot.GoTowards(5, 0, 150)
-    robot.GoBack(50,450)
 
 
 
 def Elevator():
     #Follow line
-    robot.TurnTo(0,150)
     robot.FollowLine(24,150)
     robot.GoTowards(5,0,150)
     #Turn to bridge
@@ -57,6 +32,25 @@ def Elevator():
     robot.TurnTo(-20, 150)
     #Go forward and back
     robot.GoTowards(7,-20,75)
-    robot.GoBack(7,25)
-    robot.GoBack(40, 500)
+    robot.GoBack(6.5,50)
+    robot.GoBack(20, 500)
 
+def ColorMatch():
+    robot.GoTowards(14, 0, 150)
+    robot.FollowLine(7, 150)
+    robot.TankTurnTo(-20, 100)
+    robot.GoTowards(2, -20, 100)
+    robot.GoBackTowards(2.5, -20, 100)
+    robot.TankTurnTo(0,100)
+    robot.FollowLine(12,150)
+    robot.GoTowards(10, 0, 150)
+    robot.TurnTo(-90, 100)
+    robot.GoTowards(9.5, -90, 100)
+    robot.GoBack(10, 100)
+
+def Blocks():
+    robot.GoStraight(18.5, 100)
+    robot.GoBack(17,200)
+    robot.TurnRight(90, 200)
+    robot.GoBack(15, 200)
+    robot.TankTurnLeft(100, 200)
