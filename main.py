@@ -36,7 +36,8 @@ while True:
         elif CurrentMission == 1:
             beta.Elevator()
         elif CurrentMission == 2:
-            alpha.Crane()
+            #alpha.Crane()
+            alpha.Ramp()
         elif CurrentMission == 3:
             beta.Blocks()
         elif CurrentMission == 4:
