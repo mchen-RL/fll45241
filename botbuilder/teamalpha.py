@@ -4,11 +4,13 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot
 
-# Ramp
+ #Ramp
 def Ramp():
-    robot.FollowLine(38,50)
+    robot.GoStraight(10,100)
+    robot.FollowLine(40,100)
     robot.TurnLeft(90,100)
-    robot.FollowLine(41, 195)
+    robot.FollowLine(20, 195)
+    robot.GoStraight(21,100)
 
 def Crane():
    robot.gyro.reset_angle(-90)
