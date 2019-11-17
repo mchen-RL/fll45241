@@ -1,7 +1,7 @@
 #!/usr/bin/env pybricks-micropython
 from pybricks import ev3brick as brick
 from pybricks.tools import print, wait, StopWatch
-from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
+from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align, Stop)
 from botbuilder import robot
 
 def Swing():
@@ -12,16 +12,21 @@ def Swing():
 
     #Start Elevator mission
     robot.TurnTo(30, 150)
-    robot.GoBackTowards(22, 25, 150)
+    robot.GoBackTowards(24, 25, 150)
     robot.TurnTo(-20, 150)
-    robot.GoTowards(7,-25,75)
+    robot.GoTowards(7.5,-25,75)
     robot.GoBack(6.5,50)
-    robot.GoBack(20, 500)
+    robot.GoBack(45, 450)
+    robot.TankTurnTo(0, 150)
+    robot.GoBack(10, 100)
+    robot.TankTurnTo(-90, 100)
+
 
 
 
 
 def Elevator():
+    #This program is not being used people, don't use it. It's already being combined with the swing.
     #Follow line
     robot.FollowLine(24,150)
     robot.GoTowards(5,0,150)
@@ -45,7 +50,7 @@ def ColorMatch():
     robot.FollowLine(12,150)
     robot.GoTowards(10, 0, 150)
     robot.TurnTo(-90, 100)
-    robot.GoTowards(9.5, -90, 100)
+    robot.GoTowards(10, -90, 100)
     robot.GoBack(10, 100)
 
 def Blocks():
@@ -54,3 +59,5 @@ def Blocks():
     robot.TurnRight(90, 200)
     robot.GoBack(15, 200)
     robot.TankTurnLeft(100, 200)
+
+
