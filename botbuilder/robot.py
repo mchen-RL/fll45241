@@ -98,6 +98,8 @@ def TurnTo(direction,speed):
     else:
         TurnLeft(CurrentGyro - direction, speed)
 
+    RealStop()
+
 
 
 #Makes the robot turn right
@@ -156,6 +158,7 @@ def TankTurnTo(direction, speed):
         TankTurnRight(direction - CurrentGyro, speed)
     else:
         TankTurnLeft(CurrentGyro - direction, speed)
+    RealStop()
 
 def TankTurnLeft(degree, speed):
     CurrentDegrees = gyro.angle()
@@ -173,4 +176,9 @@ def TankTurnRight(degree, speed):
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
         pass
+    robot.stop(Stop.BRAKE)
+
+def RealStop():
+    robot.stop(Stop.BRAKE)
+    wait(10)
     robot.stop(Stop.BRAKE)

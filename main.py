@@ -3,10 +3,10 @@ from pybricks import ev3brick as brick
 from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
-
 missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg",
-            "Images/StackBlocks.jpg", "Images/ColorMatch.png"]
-
+            "Images/StackBlocks.jpg", "Images/ColorMatch.png","Images/Ramp.jpg"]
+time = StopWatch()
+Start = False
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
@@ -28,20 +28,30 @@ while True:
             CurrentMission = len(missions) - 1
 
     elif Button.CENTER in brick.buttons():
+        if Start == False:
+            time.reset()
         wait(100)
         robot.gyro.reset_angle(0)
         print("It's time to RUN")
+        print("Mission Started Your time was", time.time())
+
+        Start = True
         if CurrentMission == 0:
             beta.Swing()
         elif CurrentMission == 1:
             beta.Elevator()
         elif CurrentMission == 2:
-            #alpha.Crane()
-            alpha.Ramp()
+            alpha.Crane()
         elif CurrentMission == 3:
             beta.Blocks()
         elif CurrentMission == 4:
             beta.ColorMatch()
+        elif CurrentMission == 5:
+            alpha.Ramp()
+
+        print(" ")
+        print("Mission Accomplished! Your time was", time.time())
+
 
     brick.display.image(missions[CurrentMission])
 
