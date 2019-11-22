@@ -52,7 +52,7 @@ def FollowLine(inch, speed):
     while(right.angle() < degree):
         ColorReflect = color2.reflection()
         #Color reflect = reflection from color sensor
-        error = ColorReflect - 40
+        error = ColorReflect - 30
         #40 is in the middle of black and white, where you want to go
         #the error is how much you need to turn
         robot.drive(speed,error * 0.5)
