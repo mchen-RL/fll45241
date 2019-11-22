@@ -8,8 +8,8 @@ from botbuilder import robot
 def Ramp():
     robot.GoStraight(14,150)
     robot.FollowLine(19,100)
-    robot.GoStraight(9.5,150)
-    robot.TurnTo(-110,100)
+    robot.GoStraight(7,150)
+    robot.TurnTo(-112,100)
     robot.GoStraight(43.5,150)
     robot.FollowLine(20, 195)
 
