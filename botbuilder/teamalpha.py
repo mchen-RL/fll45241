@@ -6,13 +6,11 @@ from botbuilder import robot
 
  #Ramp
 def Ramp():
-    robot.GoStraight(14,150)
+    robot.GoStraight(12,150)
     robot.FollowLine(19,100)
     robot.GoStraight(7,150)
     robot.TurnTo(-112,100)
-    robot.GoStraight(43.5,150)
-    robot.FollowLine(20, 195)
-
+    robot.GoTowards(38,-112,150)
 
 def Crane():
    robot.gyro.reset_angle(-90)
