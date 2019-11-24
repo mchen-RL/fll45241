@@ -9,8 +9,8 @@ def Ramp():
     robot.GoStraight(12,150)
     robot.FollowLine(19,100)
     robot.GoStraight(7,150)
-    robot.TurnTo(-112,100)
-    robot.GoTowards(38,-112,150)
+    robot.TurnTo(-110,100)
+    robot.GoTowards(40,-110,150)
 
 def Crane():
    robot.gyro.reset_angle(-90)
