@@ -18,19 +18,18 @@ def Swing():
     robot.GoBack(1, 100)
     robot.TurnTo(25, 100)
     robot.GoBackTowards(25, 25, 150)
+    robot.TurnTo(30, 150)
+    robot.GoBackTowards(23, 25, 150)
     robot.RealStop()
     robot.TurnTo(-20, 150)
     robot.GoTowards(7.5,-25,75)
     robot.GoBack(6.5,50)
     robot.GoBack(45, 450)
     robot.TankTurnTo(0, 150)
-    robot.GoBack(10, 100)
+    robot.GoBack(14, 150)
     robot.RealStop()
-    robot.TankTurnTo(-90, 100)
-
-
-
-
+    robot.TankTurnTo(-90, 150)
+    robot.RealStop()
 
 def Elevator():
     #This program is not being used people, don't use it. It's already being combined with the swing.
@@ -48,8 +47,8 @@ def Elevator():
     robot.GoBack(20, 500)
 
 def ColorMatch():
-    robot.GoTowards(14, 0, 150)
-    robot.FollowLine(7, 150)
+    robot.GoTowards(15.5, 0, 150)
+    robot.FollowLine(9, 150)
     robot.RealStop()
     robot.TankTurnTo(-20, 100)
     robot.GoTowards(2, -20, 100)
@@ -60,7 +59,7 @@ def ColorMatch():
     robot.GoTowards(10, 0, 150)
     robot.RealStop()
     robot.TurnTo(-90, 100)
-    robot.GoTowards(10, -90, 100)
+    robot.GoTowards(9.5, -90, 100)
     robot.GoBack(10, 100)
     robot.RealStop()
 
