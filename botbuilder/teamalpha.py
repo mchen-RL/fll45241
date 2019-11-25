@@ -16,6 +16,7 @@ def Crane():
    robot.GoTowards(2.5,-90,50)
    robot.GoBackTowards(12,-90,150)
    robot.RealStop()
+   #Go to the next lever
    robot.TurnTo(0,150)
    robot.GoTowards(4,0,150)
    robot.RealStop()
@@ -25,6 +26,7 @@ def Crane():
    robot.GoBack(0.5,50)
    robot.RealStop()
    wait(500)
+   #Do multiple lifts for different enviroments
    robot.MoveMotor(110, 400, True)
    robot.MoveMotor(120, 400, True)
    robot.MoveMotor(130, 400, True)
@@ -33,3 +35,8 @@ def Crane():
    wait(500)
    robot.MoveMotor(-150, 400, False)
    robot.RealStop()
+
+   #It's time to go back!
+   robot.GoBack(23, 200)
+   robot.TurnRight(90, 200)
+   robot.GoBack(30, 200)

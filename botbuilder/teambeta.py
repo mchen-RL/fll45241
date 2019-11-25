@@ -7,13 +7,17 @@ from botbuilder import robot
 def Swing():
     robot.GoStraight(14, 150)
     robot.FollowLine(21, 150)
-    robot.GoStraight(8, 150)
+    robot.GoTowards(8 ,0 ,150)
     robot.FollowLine(17, 150)
     robot.RealStop()
 
     #Start Elevator mission
-    robot.TurnTo(30, 150)
-    robot.GoBackTowards(24, 25, 150)
+    robot.TurnTo(35, 150)
+    #push the thing
+    robot.GoTowards(1, 60, 100)
+    robot.GoBack(1, 100)
+    robot.TurnTo(25, 100)
+    robot.GoBackTowards(25, 25, 150)
     robot.RealStop()
     robot.TurnTo(-20, 150)
     robot.GoTowards(7.5,-25,75)
