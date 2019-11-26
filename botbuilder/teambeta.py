@@ -5,7 +5,7 @@ from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align, Stop
 from botbuilder import robot
 
 def Swing():
-    robot.GoStraight(14, 150)
+    robot.GoTowards(14, 0, 150)
     robot.FollowLine(21, 150)
     robot.GoTowards(8 ,0 ,150)
     robot.FollowLine(17, 150)
@@ -18,15 +18,14 @@ def Swing():
     robot.GoBack(1, 100)
     robot.TurnTo(25, 100)
     robot.GoBackTowards(25, 25, 150)
-    robot.TurnTo(30, 150)
-    robot.GoBackTowards(23, 25, 150)
     robot.RealStop()
     robot.TurnTo(-20, 150)
     robot.GoTowards(7.5,-25,75)
     robot.GoBack(6.5,50)
-    robot.GoBack(45, 450)
-    robot.TankTurnTo(0, 150)
-    robot.GoBack(14, 150)
+    #It's time to go back
+    robot.GoBack(30, 450)
+    robot.TankTurnTo(0, 250)
+    robot.GoBackTowards(30, 0, 300)
     robot.RealStop()
     robot.TankTurnTo(-90, 150)
     robot.RealStop()
@@ -64,13 +63,14 @@ def ColorMatch():
     robot.RealStop()
 
 def Blocks():
-    robot.GoStraight(18.5, 100)
+    robot.gyro.reset_angle(-90)
+    robot.GoTowards(18.5, -90, 100)
     robot.GoBack(17,200)
     robot.RealStop()
-    robot.TurnRight(90, 200)
-    robot.GoBack(15, 200)
+    robot.TurnTo(0, 200)
+    robot.GoBackTowards(17, 0, 200)
     robot.RealStop()
-    robot.TankTurnLeft(100, 200)
+    robot.TankTurnTo(-90, 200)
     robot.RealStop()
 
 
