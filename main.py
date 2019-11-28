@@ -33,7 +33,7 @@ while True:
         wait(100)
         robot.gyro.reset_angle(0)
         print("It's time to RUN")
-        print("Mission Started Your time was", time.time())
+        print("Mission Started. Your time was", time.time())
 
         Start = True
         if CurrentMission == 0:

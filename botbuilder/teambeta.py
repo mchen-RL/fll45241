@@ -16,7 +16,7 @@ def Swing():
     robot.GoBackTowards(23, 25, 150)
     robot.RealStop()
     robot.TurnTo(-20, 150)
-    robot.GoTowards(7.5,-25,75)
+    robot.GoTowards(17.5,-25,75)
     robot.GoBack(6.5,50)
     robot.GoBack(45, 450)
     robot.TankTurnTo(0, 150)
@@ -26,7 +26,8 @@ def Swing():
     robot.RealStop()
 
 def Elevator():
-    #This program is not being used people, don't use it. It's already being combined with the swing.
+    #This program is not being used
+
     #Follow line
     robot.FollowLine(24,150)
     robot.GoTowards(5,0,150)
