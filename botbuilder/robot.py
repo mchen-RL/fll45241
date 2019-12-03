@@ -88,7 +88,9 @@ def TurnLeft(degree, speed):
     right.run(speed)
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
-        pass
+        if abs(gyro.angle() - stopDegree) < 40:
+            left.run(60)
+
     robot.stop(Stop.BRAKE)
 
 def TurnTo(direction,speed):
@@ -109,10 +111,12 @@ def TurnRight(degree, speed):
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        pass
+        if abs(gyro.angle() - stopDegree) < 20:
+            left.run(60)
+
     robot.stop(Stop.BRAKE)
 
-
+#it debugs when there's BIG problems
 def Debug(step):
     print(step, "  gyro =", gyro.angle(),"  right rotation =", right.angle(), "left rotation =", left.angle(),"time =", time.time()//1000)
 
@@ -182,3 +186,4 @@ def RealStop():
     robot.stop(Stop.BRAKE)
     wait(10)
     robot.stop(Stop.BRAKE)
+
