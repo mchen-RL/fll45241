@@ -88,8 +88,8 @@ def TurnLeft(degree, speed):
     right.run(speed)
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
-        if abs(gyro.angle() - stopDegree) < 40:
-            left.run(60)
+        if abs(gyro.angle() - stopDegree) < 20:
+            right.run(80)
 
     robot.stop(Stop.BRAKE)
 
@@ -111,8 +111,8 @@ def TurnRight(degree, speed):
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20 :
-            left.run(60)
+        if abs(gyro.angle() - stopDegree) < 20:
+            left.run(80)
 
     robot.stop(Stop.BRAKE)
 
@@ -155,7 +155,6 @@ def MoveMotor(degrees,speed,back):
     if back:
         amotor.run_angle(-speed, degrees, Stop.BRAKE)
 
-
 def TankTurnTo(direction, speed):
     CurrentGyro = gyro.angle()
     if CurrentGyro - direction < 0:
@@ -170,7 +169,9 @@ def TankTurnLeft(degree, speed):
     right.run(speed)
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
-        pass
+        if abs(gyro.angle() - stopDegree) < 20:
+            left.run(-80)
+            right.run(80)
     robot.stop(Stop.BRAKE)
 
 def TankTurnRight(degree, speed):
@@ -179,7 +180,9 @@ def TankTurnRight(degree, speed):
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        pass
+        if abs(gyro.angle() - stopDegree) < 20:
+            right.run(-80)
+            left.run(80)
     robot.stop(Stop.BRAKE)
 
 def RealStop():

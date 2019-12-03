@@ -10,11 +10,14 @@ Start = False
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 15a7379f3053e886727330036f7e2a0d977e86e3
 while True:
     # Wait until any of the buttons are pressed
     while not any(brick.buttons()):
