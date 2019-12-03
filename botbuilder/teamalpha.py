@@ -42,4 +42,4 @@ def Crane():
    robot.GoBack(23, 200)
    robot.TurnRight(90, 200)
    robot.GoBack(30, 200)
-   robot.realStop()
+   robot.RealStop()
