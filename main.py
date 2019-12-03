@@ -10,17 +10,11 @@ Start = False
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
-angle_temporary = 0
-while True:
-    for e in range(4):
-        robot.TurnTo(angle_temporary, 198)
-        robot.GoTowards(2, angle_temporary, 198)
-        angle_temporary += 90
-        print(robot.gyro.angle())
 
 
 
-"""
+
+
 while True:
     # Wait until any of the buttons are pressed
     while not any(brick.buttons()):
@@ -68,4 +62,3 @@ while True:
     # Wait until all buttons are released
     while any(brick.buttons()):
         wait(10)
-"""

@@ -111,7 +111,7 @@ def TurnRight(degree, speed):
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20:
+        if abs(gyro.angle() - stopDegree) < 20 :
             left.run(60)
 
     robot.stop(Stop.BRAKE)

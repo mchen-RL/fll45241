@@ -31,19 +31,8 @@ def Swing():
 def Elevator():
     #This program is not being used
 
-    #Follow line
-    robot.FollowLine(24,150)
-    robot.GoTowards(5,0,150)
-    #Turn to bridge
-    robot.TurnTo(-110,150)
-    robot.GoTowards(9,-110,150)
-    #Go to the elevator
-    robot.TurnTo(-20, 150)
-    #Go forward and back
-    robot.GoTowards(7,-20,75)
-    robot.GoBack(6.5,50)
-    robot.GoBack(20, 500)
-
+    robot.GoStraight(5, 100)
+    robot.GoBack(5, 100)
 def ColorMatch():
     robot.GoTowards(16.5, 0, 150)
     robot.FollowLine(9, 150)
