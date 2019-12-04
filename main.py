@@ -49,7 +49,6 @@ while True:
         elif CurrentMission == 5:
             alpha.Ramp()
 
-        print(" ")
         print("Mission Accomplished! Your time was", time.time() // 1000)
 
     brick.display.image(missions[CurrentMission])

@@ -55,7 +55,7 @@ def FollowLine(inch, speed):
         error = ColorReflect - 25
         #40 is in the middle of black and white, where you want to go
         #the error is how much you need to turn
-        robot.drive(speed,error * 0.5)
+        robot.drive(speed,error * 0.7)
         #turning
     robot.stop(Stop.BRAKE)
     #stop
