@@ -170,8 +170,8 @@ def TankTurnLeft(degree, speed):
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
         if abs(gyro.angle() - stopDegree) < 20:
-            left.run(-80)
-            right.run(80)
+            left.run(-60)
+            right.run(60)
     robot.stop(Stop.BRAKE)
 
 def TankTurnRight(degree, speed):
@@ -181,8 +181,8 @@ def TankTurnRight(degree, speed):
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
         if abs(gyro.angle() - stopDegree) < 20:
-            right.run(-80)
-            left.run(80)
+            right.run(-60)
+            left.run(60)
     robot.stop(Stop.BRAKE)
 
 def RealStop():
