@@ -3,21 +3,13 @@ from pybricks import ev3brick as brick
 from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
-missions = ["Images/Swing.png", "Images/Elevator.jpg", "Images/Crane.jpg",
+missions = ["Images/Swing.png", "Images/Crane.jpg",
             "Images/StackBlocks.jpg", "Images/ColorMatch.png","Images/Ramp.jpg"]
 time = StopWatch()
 Start = False
 CurrentMission = 0
 brick.display.image(missions[CurrentMission])
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> 15a7379f3053e886727330036f7e2a0d977e86e3
 while True:
     # Wait until any of the buttons are pressed
     while not any(brick.buttons()):
@@ -47,18 +39,21 @@ while True:
         if CurrentMission == 0:
             beta.Swing()
         elif CurrentMission == 1:
-            beta.Elevator()
-        elif CurrentMission == 2:
             alpha.Crane()
-        elif CurrentMission == 3:
+        elif CurrentMission == 2:
             beta.Blocks()
-        elif CurrentMission == 4:
+        elif CurrentMission == 3:
             beta.ColorMatch()
-        elif CurrentMission == 5:
+        elif CurrentMission == 4:
             alpha.Ramp()
+
 
         print(" ")
         print("Mission Accomplished! Your time was", time.time() // 1000)
+        CurrentMission += 1
+        if len(missions) == CurrentMission:
+            CurrentMission = 0
+
 
     brick.display.image(missions[CurrentMission])
 
