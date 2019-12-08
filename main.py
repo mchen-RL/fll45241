@@ -49,7 +49,7 @@ while True:
 
 
         print(" ")
-        print("Mission Accomplished! Your time was", time.time() // 1000)
+        print("Mission Accomplished! Your time was ", time.time() // 1000)
         CurrentMission += 1
         if len(missions) == CurrentMission:
             CurrentMission = 0
