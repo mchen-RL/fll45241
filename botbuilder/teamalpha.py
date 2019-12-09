@@ -15,7 +15,7 @@ def Ramp():
 def Crane():
    robot.gyro.reset_angle(-90)
    robot.GoTowards(26.5,-90,150)
-   robot.GoTowards(2.5,-90,50)
+   robot.GoTowards(2.7,-90,50)
    robot.GoBackTowards(12,-90,200)
    robot.RealStop()
    #Go to the next lever
@@ -39,7 +39,7 @@ def Crane():
    robot.RealStop()
 
    #It's time to go back!
-   robot.GoBackTowards(20, -90, 400)
-   robot.TurnTo(0, 400)
-   robot.GoBackTowards(30, 0, 400)
+   robot.GoBackTowards(20, -90, 300)
+   robot.TurnTo(0, 300)
+   robot.GoBackTowards(30, 0, 300)
    robot.RealStop()

@@ -90,7 +90,6 @@ def TurnLeft(degree, speed):
     while (gyro.angle() > stopDegree):
         if abs(gyro.angle() - stopDegree) < 20:
             right.run(80)
-
     robot.stop(Stop.BRAKE)
 
 def TurnTo(direction,speed):
@@ -99,10 +98,7 @@ def TurnTo(direction,speed):
         TurnRight(direction - CurrentGyro, speed)
     else:
         TurnLeft(CurrentGyro - direction, speed)
-
     RealStop()
-
-
 
 #Makes the robot turn right
 def TurnRight(degree, speed):

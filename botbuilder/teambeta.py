@@ -5,50 +5,63 @@ from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align, Stop
 from botbuilder import robot
 
 def Swing():
-    robot.GoTowards(17, 0, 200)
+    robot.GoTowards(5, 0, 100)
+    robot.GoTowards(12, 0, 200)
     robot.FollowLine(21, 200)
     robot.GoTowards(8 ,0 ,200)
     robot.FollowLine(17, 200)
     robot.RealStop()
-    #Start Elevator mission
 
-    robot.TurnTo(45, 300)
-    #push the thing
-    robot.GoTowards(1, 45, 100)
-    robot.GoBackTowards(3, 45, 100)
-    robot.TurnTo(25, 300)
-    robot.GoBackTowards(19, 25, 200)
+    #Innovative Architecture
+    robot.TurnTo(50, 300)
+    robot.GoTowards(2, 50, 100)
+    robot.GoBackTowards(4, 50, 100)
+    robot.TurnTo(25, 200)
     robot.RealStop()
-    robot.TurnTo(-20, 300)
-    robot.GoTowards(12,-25,200)
-    robot.GoBack(6.5,50)
+
+    #Safety Factor
+    robot.GoBackTowards(15, 25, 200)
+    robot.TurnTo(-2, 200)
+    robot.GoTowards(15, -2, 200)
+    robot.GoBackTowards(12, 0, 200)
+    robot.RealStop()
+
+    #Elevator
+    robot.TankTurnTo(-45, 300)
+    robot.GoTowards(2.5, -90, 150)
+    robot.TurnTo(-25, 300)
+    robot.GoTowards(10, -25, 200)
+    robot.GoBackTowards(6, -25, 50)
+
     #It's time to go back
-    robot.GoBackTowards(17, -45, 300)
+    robot.GoBackTowards(18, -45, 300)
     robot.TurnTo(0, 300)
-    robot.GoBackTowards(52, 0, 300)
+    robot.GoBackTowards(55, 0, 300)
     robot.RealStop()
 
 def Elevator():
     #This program is not being used
-
     robot.GoStraight(5, 100)
     robot.GoBack(5, 100)
+
 def ColorMatch():
-    robot.GoTowards(16.5, 0, 200)
-    robot.FollowLine(8.5, 200)
+    robot.GoTowards(5, 0, 100)
+    robot.GoTowards(12, 0, 200)
+    robot.FollowLine(8, 200)
     robot.RealStop()
     robot.TankTurnTo(-28, 100)
     robot.GoTowards(2.5, -28, 100)
     robot.GoBackTowards(2.5, -28, 100)
     robot.RealStop()
-    robot.TankTurnTo(0,100)
+    robot.TankTurnTo(0, 100)
     robot.FollowLine(12, 200)
     robot.GoTowards(9, 0, 200)
     robot.RealStop()
     robot.TurnTo(-90, 300)
     robot.GoTowards(9.5, -90, 150)
-    robot.GoBackTowards(12, -90, 100)
+    robot.GoBackTowards(12.5, -90, 100)
     robot.RealStop()
+
     #GOBACKTIME
     robot.TankTurnTo(-180, 200)
     robot.GoTowards(62, -180, 300)
