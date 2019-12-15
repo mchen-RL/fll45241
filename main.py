@@ -46,15 +46,12 @@ while True:
             beta.ColorMatch()
         elif CurrentMission == 4:
             alpha.Ramp()
-
-
         print(" ")
         print("Mission Accomplished! Your time was ", time.time() // 1000)
+        robot.RealStop()
         CurrentMission += 1
         if len(missions) == CurrentMission:
             CurrentMission = 0
-
-
     brick.display.image(missions[CurrentMission])
 
     # Wait until all buttons are released

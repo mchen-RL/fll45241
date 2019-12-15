@@ -6,10 +6,10 @@ from botbuilder import robot
 
 def Swing():
     robot.GoTowards(5, 0, 100)
-    robot.GoTowards(12, 0, 200)
-    robot.FollowLine(21, 200)
-    robot.GoTowards(8 ,0 ,200)
-    robot.FollowLine(17, 200)
+    robot.GoTowards(12, 0, 250)
+    robot.FollowLine(21, 250)
+    robot.GoTowards(8 ,0 ,250)
+    robot.FollowLine(17, 250)
     robot.RealStop()
 
     #Innovative Architecture
@@ -20,62 +20,59 @@ def Swing():
     robot.RealStop()
 
     #Safety Factor
-    robot.GoBackTowards(15, 25, 200)
+    robot.GoBackTowards(14, 25, 250)
     robot.TurnTo(-2, 200)
-    robot.GoTowards(15, -2, 200)
-    robot.GoBackTowards(12, 0, 200)
+    robot.GoTowards(15, -2, 250)
+    robot.GoBackTowards(12, 0, 250)
     robot.RealStop()
 
     #Elevator
     robot.TankTurnTo(-45, 300)
     robot.GoTowards(2.5, -90, 150)
     robot.TurnTo(-25, 300)
-    robot.GoTowards(10, -25, 200)
+    robot.GoTowards(10, -25, 250)
     robot.GoBackTowards(6, -25, 50)
 
     #It's time to go back
-    robot.GoBackTowards(18, -45, 300)
-    robot.TurnTo(0, 300)
-    robot.GoBackTowards(55, 0, 300)
+    robot.GoBackTowards(14, -45, 300)
+    robot.GoBackTowards(60, 0, 300)
     robot.RealStop()
-
-def Elevator():
-    #This program is not being used
-    robot.GoStraight(5, 100)
-    robot.GoBack(5, 100)
 
 def ColorMatch():
+    # go to the red circle
     robot.GoTowards(5, 0, 100)
-    robot.GoTowards(12, 0, 200)
-    robot.FollowLine(8, 200)
+    robot.GoTowards(12, 0, 250)
+    robot.FollowLine(8, 250)
     robot.RealStop()
     robot.TankTurnTo(-28, 100)
-    robot.GoTowards(2.5, -28, 100)
+    robot.GoTowards(2.7, -28, 100)
     robot.GoBackTowards(2.5, -28, 100)
     robot.RealStop()
+    # go to the tan circle
     robot.TankTurnTo(0, 100)
-    robot.FollowLine(12, 200)
-    robot.GoTowards(9, 0, 200)
+    robot.FollowLine(12, 250)
+    robot.GoTowards(9, 0, 250)
     robot.RealStop()
     robot.TurnTo(-90, 300)
     robot.GoTowards(9.5, -90, 150)
     robot.GoBackTowards(6, -90, 100)
+    # drop the attachment
     robot.TurnTo(-60,300)
     robot.MoveMotor(-150, 400, False)
-    robot.GoBackTowards(3, -150, 150)
-    robot.TurnTo(-115, 250)
-    robot.GoTowards(30, -115, 200)
+    robot.GoBackTowards(5.5, -60, 200)
+    # go ramp
+    robot.TurnTo(-120, 250)
+    robot.GoTowards(25, -120, 200)
     robot.RealStop()
 
 def Blocks():
     robot.gyro.reset_angle(-90)
-    robot.GoTowards(19.5, -90, 150)
-    robot.GoBackTowards(18, -90, 300)
+    robot.GoTowards(20, -90, 250)
+    robot.GoBackTowards(7, -90, 300)
     robot.RealStop()
-    robot.TurnTo(0, 300)
-    robot.GoBackTowards(17, 0, 300)
+    robot.GoBackTowards(22, 0, 250)
     robot.RealStop()
-    robot.TurnTo(-90, 300)
+    robot.TurnTo(-90,300)
     robot.RealStop()
 
 
