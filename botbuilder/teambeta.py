@@ -59,14 +59,13 @@ def ColorMatch():
     robot.RealStop()
     robot.TurnTo(-90, 300)
     robot.GoTowards(9.5, -90, 150)
-    robot.GoBackTowards(8, -90, 100)
-    robot.RealStop()
+    robot.GoBackTowards(6, -90, 100)
+    robot.TurnTo(-60,300)
     robot.MoveMotor(-150, 400, False)
-    robot.GoBackTowards(8, -90, 100)
-
-
-    #GOBACKTIME
-    #robot.GoTowards(62, -180, 300)
+    robot.GoBackTowards(3, -150, 150)
+    robot.TurnTo(-115, 250)
+    robot.GoTowards(30, -115, 200)
+    robot.RealStop()
 
 def Blocks():
     robot.gyro.reset_angle(-90)
