@@ -20,22 +20,22 @@ def Swing():
     robot.RealStop()
 
     #Safety Factor
-    robot.GoBackTowards(14, 25, 250)
-    robot.TurnTo(-2, 200)
-    robot.GoTowards(15, -2, 250)
+    robot.GoBackTowards(17, 25, 250)
+    robot.TurnTo(0, 250)
+    robot.GoTowards(17, 0, 250)
     robot.GoBackTowards(12, 0, 250)
     robot.RealStop()
 
     #Elevator
     robot.TankTurnTo(-45, 300)
-    robot.GoTowards(2.5, -90, 150)
+    robot.GoTowards(1.5, -90, 150)
     robot.TurnTo(-25, 300)
-    robot.GoTowards(10, -25, 250)
+    robot.GoTowards(12, -25, 250)
     robot.GoBackTowards(6, -25, 50)
 
     #It's time to go back
-    robot.GoBackTowards(14, -45, 300)
-    robot.GoBackTowards(60, 0, 300)
+    robot.GoBackTowards(5, -25, 300)
+    robot.GoBackTowards(65, 0, 300)
     robot.RealStop()
 
 def ColorMatch():
