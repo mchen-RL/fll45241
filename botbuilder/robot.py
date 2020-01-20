@@ -22,7 +22,7 @@ amotor = Motor(Port.A)
 # pi * diameter(radius * 2)
 
 #convert inches to degrees
-def InchToDegrees(inch):]
+def InchToDegrees(inch):
     #converts inches to millimeters
     mm = inch * 25.4
     #circumference
