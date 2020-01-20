@@ -22,11 +22,11 @@ amotor = Motor(Port.A)
 # pi * diameter(radius * 2)
 
 #convert inches to degrees
-def InchToDegrees(inch):
-    mm = inch * 25.4
+def InchToDegrees(inch):]
     #converts inches to millimeters
-    rotation =  math.pi * wheel_diameter
+    mm = inch * 25.4
     #circumference
+    rotation =  math.pi * wheel_diameter
     degrees = (mm/rotation) * 360
     return degrees
 
@@ -147,12 +147,16 @@ def GoBackTowards(inch,direction,speed):
     #stop
 
 def MoveMotor(degrees,speed,back):
+    #move medium motor
     amotor.run_angle(speed, degrees, Stop.BRAKE)
     if back:
+        #When the motor goes back to the starting position
+        #for crane mission
         amotor.run_angle(-speed, degrees, Stop.BRAKE)
 
 def TankTurnTo(direction, speed):
     CurrentGyro = gyro.angle()
+    #Turns one wheel one way and the other wheel the other way
     if CurrentGyro - direction < 0:
         TankTurnRight(direction - CurrentGyro, speed)
     else:
@@ -161,6 +165,7 @@ def TankTurnTo(direction, speed):
 
 def TankTurnLeft(degree, speed):
     CurrentDegrees = gyro.angle()
+    #Turns one wheel one way and the other wheel the other way
     left.run(-speed)
     right.run(speed)
     stopDegree = CurrentDegrees - degree
@@ -172,6 +177,7 @@ def TankTurnLeft(degree, speed):
 
 def TankTurnRight(degree, speed):
     CurrentDegrees = gyro.angle()
+    #Turns one wheel one way and the other wheel the other way
     right.run(-speed)
     left.run(speed)
     stopDegree = CurrentDegrees + degree
@@ -182,7 +188,12 @@ def TankTurnRight(degree, speed):
     robot.stop(Stop.BRAKE)
 
 def RealStop():
+    #Stops the motors twice for GOOD! Makes it more accurate
+    #without the wheels somethimes still moving
     robot.stop(Stop.BRAKE)
     wait(10)
     robot.stop(Stop.BRAKE)
+
+#We needed this stop because the lego EV3 stop function
+#will sometimes keep one wheel moving when it stops
 

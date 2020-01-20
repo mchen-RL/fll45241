@@ -38,7 +38,7 @@ def Swing():
     robot.GoBackTowards(65, 0, 300)
     robot.RealStop()
 
-def ColorMatch():
+def ColorMatch(add):
     # go to the red circle
     robot.GoTowards(5, 0, 100)
     robot.GoTowards(12, 0, 250)
@@ -62,7 +62,10 @@ def ColorMatch():
     robot.GoBackTowards(5.5, -60, 200)
     # go ramp
     robot.TurnTo(-120, 250)
-    robot.GoTowards(25, -120, 200)
+    if add:
+        robot.GoTowards(35, -120, 200)
+    else:
+        robot.GoTowards(25, -120, 200)
     robot.RealStop()
 
 def Blocks():

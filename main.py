@@ -43,9 +43,10 @@ while True:
         elif CurrentMission == 2:
             beta.Blocks()
         elif CurrentMission == 3:
-            beta.ColorMatch()
+            beta.ColorMatch(False)
         elif CurrentMission == 4:
-            alpha.Ramp()
+            beta.ColorMatch(True)
+
         print(" ")
         print("Mission Accomplished! Your time was ", time.time() // 1000)
         robot.RealStop()
