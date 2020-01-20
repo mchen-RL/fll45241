@@ -5,8 +5,8 @@ from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align, Stop
 from botbuilder import robot
 
 def Swing():
-    robot.GoTowards(5, 0, 100)
-    robot.GoTowards(12, 0, 250)
+    robot.GoTowards(3, 0, 100)
+    robot.GoTowards(14, 0, 250)
     robot.FollowLine(21, 250)
     robot.GoTowards(8 ,0 ,250)
     robot.FollowLine(17, 250)
@@ -31,41 +31,45 @@ def Swing():
     robot.GoTowards(1.5, -45, 150)
     robot.TurnTo(-25, 300)
     robot.GoTowards(12, -25, 250)
-    robot.GoBackTowards(6, -25, 50)
+    robot.GoBackTowards(6, -45, 250)
 
     #It's time to go back
     robot.GoBackTowards(5, -25, 300)
-    robot.GoBackTowards(65, 0, 300)
+    robot.GoBackTowards(68, 0, 300)
     robot.RealStop()
 
 def ColorMatch(add):
     # go to the red circle
-    robot.GoTowards(5, 0, 100)
-    robot.GoTowards(12, 0, 250)
+    robot.GoTowards(3, 0, 100)
+    robot.GoTowards(14, 0, 250)
     robot.FollowLine(8, 250)
     robot.RealStop()
     robot.TankTurnTo(-28, 100)
     robot.GoTowards(2.7, -28, 100)
     robot.GoBackTowards(2.5, -28, 100)
     robot.RealStop()
+
     # go to the tan circle
     robot.TankTurnTo(0, 100)
     robot.FollowLine(12, 250)
     robot.GoTowards(9, 0, 250)
     robot.RealStop()
+
     robot.TurnTo(-90, 300)
     robot.GoTowards(9.5, -90, 150)
     robot.GoBackTowards(6, -90, 100)
+
     # drop the attachment
     robot.TurnTo(-60,300)
     robot.MoveMotor(-150, 400, False)
     robot.GoBackTowards(5.5, -60, 200)
+
     # go ramp
     robot.TurnTo(-120, 250)
     if add:
-        robot.GoTowards(35, -120, 200)
+        robot.GoTowards(44, -120, 250)
     else:
-        robot.GoTowards(25, -120, 200)
+        robot.GoTowards(25, -120, 300)
     robot.RealStop()
 
 def Blocks():
@@ -75,7 +79,7 @@ def Blocks():
     robot.RealStop()
     robot.GoBackTowards(22, 0, 250)
     robot.RealStop()
-    robot.TurnTo(-90,300)
+    robot.TurnTo(-90, 300)
     robot.RealStop()
 
 
