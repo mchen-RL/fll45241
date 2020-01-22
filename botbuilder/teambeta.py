@@ -22,16 +22,17 @@ def Swing():
     #Safety Factor
     robot.GoBackTowards(16, 25, 250)
     robot.TurnTo(0, 250)
-    robot.GoTowards(18, 0, 250)
+    robot.GoTowards(16, 0, 250)
+    robot.GoTowards(4, 0, 150)
     robot.GoBackTowards(12, 0, 250)
     robot.RealStop()
 
     #Elevator
     robot.TankTurnTo(-45, 300)
-    robot.GoTowards(1.5, -45, 150)
+    robot.GoTowards(2, -45, 150)
     robot.TurnTo(-25, 300)
     robot.GoTowards(12, -25, 250)
-    robot.GoBackTowards(6, -45, 250)
+    robot.GoBackTowards(6, -25, 50)
 
     #It's time to go back
     robot.GoBackTowards(5, -25, 300)

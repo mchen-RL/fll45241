@@ -23,7 +23,6 @@ def Crane():
    wait(500)
 
    #Do multiple lifts for different enviroments
-   robot.MoveMotor(110, 400, True)
    robot.MoveMotor(120, 400, True)
    robot.MoveMotor(130, 400, True)
    robot.MoveMotor(140, 400, True)
