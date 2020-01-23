@@ -16,7 +16,7 @@ def Crane():
    robot.GoTowards(4,0,200)
    robot.RealStop()
    robot.TurnTo(-90,300)
-   robot.GoTowards(3,-90,150)
+   robot.GoTowards(3.5,-90,150)
    robot.GoTowards(2,-90,28)
    robot.GoBack(0.5,50)
    robot.RealStop()
@@ -34,3 +34,11 @@ def Crane():
    robot.GoBackTowards(5, -90, 300)
    robot.GoBackTowards(40, 0, 300)
    robot.RealStop()
+
+def Testie():
+    robot.GoTowards(40, 0, 200)
+    robot.TurnTo(90, 200)
+    robot.GoTowards(3, 90, 200)
+    robot.TurnTo(180, 200)
+    robot.TurnTo(0, 200)
+    robot.GoBackTowards(40, 0, 200)

@@ -4,7 +4,8 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
 missions = ["Images/Swing.png", "Images/Crane.jpg",
-            "Images/StackBlocks.jpg", "Images/ColorMatch.png","Images/Ramp.jpg"]
+            "Images/StackBlocks.jpg", "Images/ColorMatch.png","Images/Ramp.jpg",
+            "Images/Testie.png"]
 time = StopWatch()
 Start = False
 CurrentMission = 0
@@ -46,6 +47,8 @@ while True:
             beta.ColorMatch(False)
         elif CurrentMission == 4:
             beta.ColorMatch(True)
+        elif CurrentMission == 5:
+            alpha.Testie()
 
         print(" ")
         print("Mission Accomplished! Your time was ", time.time() // 1000)
