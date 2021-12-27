@@ -3,9 +3,8 @@ from pybricks import ev3brick as brick
 from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
-missions = ["Images/Swing.png", "Images/Crane.jpg",
-            "Images/StackBlocks.jpg", "Images/ColorMatch.png","Images/Ramp.jpg",
-            "Images/Testie.png"]
+missions = [
+"Images/Testie.png"]
 time = StopWatch()
 Start = False
 CurrentMission = 0
@@ -37,18 +36,9 @@ while True:
         print("Mission Started. Your time was", time.time() // 1000)
 
         Start = True
-        if CurrentMission == 0:
-            beta.Swing()
-        elif CurrentMission == 1:
-            alpha.Crane()
-        elif CurrentMission == 2:
-            beta.Blocks()
-        elif CurrentMission == 3:
-            beta.ColorMatch(False)
-        elif CurrentMission == 4:
-            beta.ColorMatch(True)
-        elif CurrentMission == 5:
-            alpha.Testie()
+        
+       
+        alpha.Run3()
 
         print(" ")
         print("Mission Accomplished! Your time was ", time.time() // 1000)
@@ -57,6 +47,8 @@ while True:
         CurrentMission += 1
         if len(missions) == CurrentMission:
             CurrentMission = 0
+
+        
     brick.display.image(missions[CurrentMission])
 
     # Wait until all buttons are released
