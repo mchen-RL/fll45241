@@ -47,7 +47,7 @@ def Plane():
    robot.MoveMotor(360, -200, False)
    robot.MoveMotor(360, 200, False)
 
-def Run1x():
+def test():
    robot.MoveMotor(160, -200, False)
    robot.wait(2000) 
    robot.MoveMotor(160, 200, False)
