@@ -5,13 +5,13 @@ from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot
 
 
-#def Testie():
-    #robot.GoTowards(40, 0, 200)
-    #robot.TurnTo(90, 200)
-    #robot.GoTowards(3, 90, 200)
-    #robot.TurnTo(180, 200)
-    #robot.TurnTo(0, 200)
-    #robot.GoBackTowards(40, 0, 200)
+def Testie():
+    robot.GoTowards(40, 0, 200)
+    robot.TurnTo(90, 200)
+    robot.GoTowards(3, 90, 200)
+    robot.TurnTo(180, 200)
+    robot.TurnTo(0, 200)
+    robot.GoBackTowards(40, 0, 200)
 
 def Bridge():
    robot.GoStraignt(7, 200)
@@ -52,7 +52,7 @@ def test():
    robot.wait(2000) 
    robot.MoveMotor(160, 200, False)
 
-def Run1():
+def Run2():
 
    #Helicopter, Train Tracks, Bridge,  Blue block
    robot.gyro.reset_angle(0)
@@ -103,7 +103,7 @@ def Run1():
    # robot.GoTowards(4, -135, 200)
    # robot.GoTowards(60,-90, 200)
 
-def Run2():
+def Run1():
    #Box Delivery, Sorting Center, Innovation Model
 
    #Box Delivery
@@ -206,12 +206,3 @@ def Run4():
    robot.TankTurnTo(-90,120)
    robot.GoTowards(6, -90, 120) 
    robot.GoTowards(4, -90, 70) 
-
-
-   
-
-   
-
-  
- 
-

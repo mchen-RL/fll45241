@@ -4,7 +4,7 @@ from pybricks.tools import print, wait, StopWatch
 from pybricks.parameters import (Port, SoundFile, Button, ImageFile, Align)
 from botbuilder import robot, teamalpha as alpha, teambeta as beta
 missions = [
- "Images/gift.jpg", "Images/Ramp.jpg", "Images/StackBlocks.jpg", "Images/truck.jpg"]
+ "Images/gift.jpg", "Images/Ramp.jpg", "Images/StackBlocks.jpg", "Images/truck.jpg", ]
 time = StopWatch()
 Start = False
 CurrentMission = 0
@@ -36,19 +36,19 @@ while True:
         print("Mission Started. Your time was", time.time() // 1000)
 
         Start = True
-       if CurrentMission = 0:
-           alpha.Testie()
+        if CurrentMission == 4:
+            alpha.Testie()
 
-       elif CurrentMission = 1:
+        elif CurrentMission == 0:
             alpha.Run1()
         
-       elif CurrentMission = 2:
+        elif CurrentMission == 1:
             alpha.Run2()
 
-        elif CurrentMission = 3:
+        elif CurrentMission == 2:
             alpha.Run3()
         
-        elif CurrentMission = 4:
+        elif CurrentMission == 3:
             alpha.Run4()
 
         print(" ")

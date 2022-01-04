@@ -51,7 +51,7 @@ def FollowLine(inch, speed):
     #go
     while(right.angle() < degree):
         ColorReflect = color2.reflection()
-        print(ColorReflect)
+        #print(ColorReflect)
         #Color reflect = reflection from color sensor
         error = ColorReflect - 25
         #25 is in the middle of black and white, where you want to go
