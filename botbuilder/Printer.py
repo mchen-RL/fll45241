@@ -12,7 +12,7 @@ yAxis = Motor(Port.B)
 Pen = Motor(Port.C)
 color = ColorSensor(Port.S4)
 
-penUp = False
+penUp = True
 lengthOfPage = 10
 widthOfPage = 5
 xMotorRatio = 70/720 #change later
@@ -34,7 +34,7 @@ def MoveMotor(degrees, speed, name, wait):
 def penup():
     global penUp
     if penUp == False:
-        MoveMotor(100, 300, Pen, True)
+        MoveMotor(450, 300, Pen, True)
         penUp = True
     else:
         pass
@@ -42,7 +42,7 @@ def penup():
 def pendown():
     global penUp
     if penUp == True:
-        MoveMotor(100, -300, Pen, True)
+        MoveMotor(450, -300, Pen, True)
         penUp = False
     else:
         pass
@@ -58,7 +58,7 @@ def goto(x, y):
 
     if ydistance == 0:
         time = abs(xradius / 100) * 1000
-        xAxis.run_time(100, time, Stop.BRAKE, False)
+        xAxis.run_time(- math.copysign(100, ydistance), time, Stop.BRAKE, False)
     else:
         speedRatio = abs((x-currentx)/(y-currenty))
         time = abs(yradius / 100) * 1000
@@ -75,21 +75,81 @@ def goto(x, y):
 def feedPaper():
     penup()
     yAxis.run(-100)
-    c = color.color()
-    
-    while c == None:
-        c = color.color()
-    yAxis.stop(Stop.BRAKE)
+    c = color.reflection()
+
+    while c < 5:
+        c = color.reflection()
+        print(c)
     yAxis.stop(Stop.BRAKE)
 
-penUp = False
+    MoveMotor(1000, 200, xAxis, True)
+    currentx = 0
+    currenty = 0
+
+
+penUp = True
+penup()
+
+
+
+def drawbox():
+    #Horizontal lines
+    penup()
+    goto(0, 30)
+    pendown()
+    goto(0, 160)
+
+    penup()
+    goto(-30, 0)
+    pendown()
+    goto(-30, 160)
+
+    penup()
+    goto(-60, 0)
+    pendown()
+    goto(-60, 160)
+
+    penup()
+    goto(-90, 30)
+    pendown()
+    goto(-90, 160)
+
+    #Vertical lines
+
+    penup()
+    goto(0, 30)
+    pendown()
+    goto(-90, 30)
+
+    penup()
+    goto(0, 80)
+    pendown()
+    goto(-90, 80)
+
+    penup()
+    goto(0, 110)
+    pendown()
+    goto(-90, 110)
+
+    penup()
+    goto(0, 160)
+    pendown()
+    goto(-90, 160)
+
+    #penup()
+    #goto(0, 160)
+    #pendown()
+    #goto(-90, 160)
+
+
+
+
+
+    #tab
+    penup()
+    goto(-60, 0)
+    pendown()
+    goto(-30, 0)
+
 feedPaper()
-
-MoveMotor(-1000, 100, xAxis, True)
-goto(45, 10)
-pendown()
-goto(0, 55)
-goto(45, 100)
-goto(90, 55)
-goto(45, 10)
-print("completed")
+drawbox()
