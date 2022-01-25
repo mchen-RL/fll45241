@@ -58,7 +58,7 @@ def goto(x, y):
 
     if ydistance == 0:
         time = abs(xradius / 100) * 1000
-        xAxis.run_time(- math.copysign(100, ydistance), time, Stop.BRAKE, False)
+        xAxis.run_time(- math.copysign(100, xdistance), time, Stop.BRAKE, False)
     else:
         speedRatio = abs((x-currentx)/(y-currenty))
         time = abs(yradius / 100) * 1000
@@ -86,13 +86,41 @@ def feedPaper():
     currentx = 0
     currenty = 0
 
-
-penUp = True
-penup()
-
-
-
 def drawbox():
+    penup()
+    goto(0, 30)
+    pendown()
+    goto(0, 150)
+    goto(90, 150)
+    goto(90, 30)
+    goto(0, 30)
+
+    penup()
+    goto(0, 0)
+    goto(30, 0)
+    pendown()
+    goto(30, 150)
+    goto(60, 150)
+    goto(60, 0)
+    goto(30, 0)
+
+    penup()
+    goto(0, 0)
+    goto(0, 60)
+    pendown()
+    goto(90, 60)
+
+    penup()
+    goto(90, 90)
+    pendown()
+    goto(0, 90)
+
+    penup()
+    goto(0, 120)
+    pendown()
+    goto(90, 120)
+
+def drawbox1():
     #Horizontal lines
     penup()
     goto(0, 30)
@@ -151,5 +179,12 @@ def drawbox():
     pendown()
     goto(-30, 0)
 
+penUp = False
+penup()
 feedPaper()
+goto(0, 0)
 drawbox()
+
+penup()
+yAxis.run_time(100, 15000, Stop.BRAKE, True)
+pendown()
