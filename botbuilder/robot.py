@@ -84,32 +84,32 @@ def GoTowards(inch,direction,speed):
     #stop
 
 #Makes the robot turn left
-def TurnLeft(degree, speed):
+def TurnLeft(degree, speed, precise = True):
     CurrentDegrees = gyro.angle()
     left.stop(Stop.BRAKE)
     right.run(speed)
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20:
+        if precise and abs(gyro.angle() - stopDegree) < 20:
             right.run(80)
     robot.stop(Stop.BRAKE)
 
-def TurnTo(direction,speed):
+def TurnTo(direction, speed, precise = True):
     CurrentGyro = gyro.angle()
     if CurrentGyro - direction < 0:
-        TurnRight(direction - CurrentGyro, speed)
+        TurnRight(direction - CurrentGyro, speed, precise)
     else:
-        TurnLeft(CurrentGyro - direction, speed)
+        TurnLeft(CurrentGyro - direction, speed, precise)
     RealStop()
 
 #Makes the robot turn right
-def TurnRight(degree, speed):
+def TurnRight(degree, speed, precise = True):
     CurrentDegrees = gyro.angle()
     right.stop(Stop.BRAKE)
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20:
+        if precise and abs(gyro.angle() - stopDegree) < 20:
             left.run(80)
 
     robot.stop(Stop.BRAKE)
@@ -156,35 +156,39 @@ def MoveMotor(degrees,speed,back):
         #for crane mission
         amotor.run_angle(-speed, degrees, Stop.BRAKE)
 
-def TankTurnTo(direction, speed):
+def MoveMotorTime(time,speed):
+    #move medium motor
+    amotor.run_time(speed, time, Stop.BRAKE)
+
+def TankTurnTo(direction, speed, precise = True):
     CurrentGyro = gyro.angle()
     #Turns one wheel one way and the other wheel the other way
     if CurrentGyro - direction < 0:
-        TankTurnRight(direction - CurrentGyro, speed)
+        TankTurnRight(direction - CurrentGyro, speed, precise)
     else:
-        TankTurnLeft(CurrentGyro - direction, speed)
+        TankTurnLeft(CurrentGyro - direction, speed, precise)
     RealStop()
 
-def TankTurnLeft(degree, speed):
+def TankTurnLeft(degree, speed, precise = True):
     CurrentDegrees = gyro.angle()
     #Turns one wheel one way and the other wheel the other way
     left.run(-speed)
     right.run(speed)
     stopDegree = CurrentDegrees - degree
     while (gyro.angle() > stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20:
+        if precise and abs(gyro.angle() - stopDegree) < 20:
             left.run(-80)
             right.run(80)
     robot.stop(Stop.BRAKE)
 
-def TankTurnRight(degree, speed):
+def TankTurnRight(degree, speed, precise = True):
     CurrentDegrees = gyro.angle()
     #Turns one wheel one way and the other wheel the other way
     right.run(-speed)
     left.run(speed)
     stopDegree = CurrentDegrees + degree
     while (gyro.angle() < stopDegree):
-        if abs(gyro.angle() - stopDegree) < 20:
+        if precise and abs(gyro.angle() - stopDegree) < 20:
             right.run(-80)
             left.run(80)
     robot.stop(Stop.BRAKE)
